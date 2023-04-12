@@ -57,6 +57,8 @@ import ClientsList from "./pages/myAdmin/ClientsList";
 import ClientProfile from "./pages/myAdmin/ClientProfile";
 import Components from "./pages/myAdmin/Components";
 import Clientsz from "./pages/myAdmin/Clientsz";
+import ChangePassword from "./pages/myAdmin/ChangePassword";
+
 import Compose from "./pages/myAdmin/Compose";
 import Contacts from "./pages/myAdmin/Contacts";
 import CreateEstimate from "./pages/myAdmin/CreateEstimate";
@@ -163,6 +165,7 @@ import Auth404 from "./pages/UiElements/Auth404";
 import AuthPassReset from "./pages/UiElements/AuthPassReset";
 
 import {BrowserRouter as Router, Routes,Route } from "react-router-dom"
+import SubscriptionsCompany from './pages/myAdmin/SubscriptionsCompany';
 
 
 
@@ -174,8 +177,9 @@ function App() {
 
 <div id='payroll'>
 
-    <Router> 
+     {/* <Router>  
         <Routes>
+         <Route path='/' element={<Activities/>}/> 
         <Route path='/' element={<Task/>}/> 
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/Attendance_Employees' element={<Attendance_Employees/>}/>
@@ -212,11 +216,12 @@ function App() {
           <Route path='/Indx' element={<Indx/>}/> 
           <Route path='/Indx2' element={<Indx2/>}/> 
           <Route path='/Members' element={<Members/>}/> 
-          {/* <Route path='/Task' element={<Task/>}/>  */}
+          <Route path='/Indexx' element={<Indexx/>}/> 
+
      
 
-        </Routes>  
-         </Router>    
+         </Routes>    
+          {/* </Router>      */} 
 
       
       {/* <Contact/> */}
@@ -258,10 +263,11 @@ function App() {
       </div>
 
 
-<div id="myadmin">
-{/* <Router> 
+{/* <div id="myadmin"> */}
+<div>
+  <Router> 
         <Routes>
-        <Route path='/Activities' element={<Activities/>}/> 
+        <Route path='/' element={<Activities/>}/> 
           <Route path='/Assets' element={<Assets/>}/>
           <Route path='/AttendanceAdmin' element={<AttendanceAdmin/>}/>
           <Route path='/AttendanceEmployee' element={<AttendanceEmployee/>}/>
@@ -372,7 +378,7 @@ function App() {
           <Route path='/VoiceCall' element={<VoiceCall/>}/> 
      
         </Routes>  
-         </Router>    */}
+         </Router>     
 
 
 {/* MyAdmin */}
