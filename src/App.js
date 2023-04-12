@@ -57,6 +57,8 @@ import ClientsList from "./pages/myAdmin/ClientsList";
 import ClientProfile from "./pages/myAdmin/ClientProfile";
 import Components from "./pages/myAdmin/Components";
 import Clientsz from "./pages/myAdmin/Clientsz";
+import ChangePassword from "./pages/myAdmin/ChangePassword";
+
 import Compose from "./pages/myAdmin/Compose";
 import Contacts from "./pages/myAdmin/Contacts";
 import CreateEstimate from "./pages/myAdmin/CreateEstimate";
@@ -163,6 +165,8 @@ import Auth404 from "./pages/UiElements/Auth404";
 import AuthPassReset from "./pages/UiElements/AuthPassReset";
 
 import {BrowserRouter as Router, Routes,Route } from "react-router-dom"
+import SubscriptionsCompany from './pages/myAdmin/SubscriptionsCompany';
+
 
 
 function App() {
@@ -173,12 +177,14 @@ function App() {
 
 <div id='payroll'>
 
-<Router>
+     {/* <Router>  
         <Routes>
-          <Route path='/' element={<Task/>} />
+         <Route path='/' element={<Activities/>}/> 
+        <Route path='/' element={<Task/>}/> 
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/Attendance_Employees' element={<Attendance_Employees/>}/>
-          <Route path='/Attendance' element={<Attendance/>}/>
+          <Route path='/Attendance' element={<Attendance/>}/> 
+          <Route path='/Task' element={<Task/>}/>
           <Route path='/Calender' element={<Calender/>}/>
           <Route path='/Charts' element={<Charts/>}/>
           <Route path='/Chat' element={<Chat/>}/>
@@ -210,10 +216,14 @@ function App() {
           <Route path='/Indx' element={<Indx/>}/> 
           <Route path='/Indx2' element={<Indx2/>}/> 
           <Route path='/Members' element={<Members/>}/> 
-          <Route path='/Task' element={<Task/>}/> 
-          {/* <Route path='*' element={<Error/>}/>  */}
-        </Routes>
-      </Router>
+          <Route path='/Indexx' element={<Indexx/>}/> 
+
+     
+
+         </Routes>    
+          {/* </Router>      */} 
+
+      
       {/* <Contact/> */}
       {/* <Attendance/> */}
       {/* <Attendance_Employees/> */}
@@ -253,7 +263,124 @@ function App() {
       </div>
 
 
-<div id="myadmin">
+{/* <div id="myadmin"> */}
+<div>
+  <Router> 
+        <Routes>
+        <Route path='/' element={<Activities/>}/> 
+          <Route path='/Assets' element={<Assets/>}/>
+          <Route path='/AttendanceAdmin' element={<AttendanceAdmin/>}/>
+          <Route path='/AttendanceEmployee' element={<AttendanceEmployee/>}/>
+          <Route path='/BlankPage' element={<BlankPage/>}/>
+          <Route path='/ChangePassword' element={<ChangePassword/>}/>
+          <Route path='/ChatAdmin' element={<ChatAdmin/>}/>
+          <Route path='/ClientProfile' element={<ClientProfile/>}/>
+          <Route path='/ClientsList' element={<ClientsList/>}/>
+          <Route path='/Clientsz' element={<Clientsz/>}/>
+          <Route path='/Components' element={<Components/>}/>
+          <Route path='/Compose' element={<Compose/>}/>
+          <Route path='/Contacts' element={<Contacts/>}/>
+          <Route path='/CreateEstimate' element={<CreateEstimate/>}/>
+          <Route path='/CreateInvoice' element={<CreateInvoice/>}/>
+          <Route path='/DataTables' element={<DataTables/>}/>
+          <Route path='/DepartmentAdmin' element={<DepartmentAdmin/>}/>
+          <Route path='/Designation' element={<Designation/>}/>
+          <Route path='/EditEstimate' element={<EditEstimate/>}/> 
+          <Route path='/EditInvoice' element={<EditInvoice/>}/> 
+          <Route path='/EmailSettings' element={<EmailSettings/>}/> 
+          <Route path='/EmployeeDashboard' element={<EmployeeDashboard/>}/> 
+          <Route path='/EmployeesList' element={<EmployeesList/>}/> 
+          <Route path='/Employeez' element={<Employeez/>}/> 
+          <Route path='/Errorz404' element={<Errorz404/>}/> 
+          <Route path='/Errorz500' element={<Errorz500/>}/> 
+          <Route path='/Estimates' element={<Estimates/>}/> 
+          <Route path='/EstimateView' element={<EstimateView/>}/> 
+          <Route path='/Events' element={<Events/>}/> 
+          <Route path='/ExpenseReports' element={<ExpenseReports/>}/> 
+          <Route path='/Expensez' element={<Expensez/>}/> 
+          <Route path='/FAQs' element={<FAQs/>}/> 
+          <Route path='/FileManager' element={<FileManager/>}/> 
+          <Route path='/ForgotPassword' element={<ForgotPassword/>}/> 
+          <Route path='/FormBasicInputs' element={<FormBasicInputs/>}/> 
+          <Route path='/FormHorizontal' element={<FormHorizontal/>}/> 
+          <Route path='/FormInputGroups' element={<FormInputGroups/>}/> 
+          <Route path='/FormMask' element={<FormMask/>}/> 
+          <Route path='/FormValidation' element={<FormValidation/>}/> 
+          <Route path='/FormVertical' element={<FormVertical/>}/> 
+          <Route path='/GoalTracking' element={<GoalTracking/>}/> 
+          <Route path='/GoalType' element={<GoalType/>}/> 
+          <Route path='/Holiday' element={<Holiday/>}/> 
+          <Route path='/Homez' element={<Homez/>}/> 
+          <Route path='/Inboxx' element={<Inboxx/>}/> 
+          <Route path='/IncommingCall' element={<IncommingCall/>}/> 
+          <Route path='/Indexx' element={<Indexx/>}/> 
+          <Route path='/InvoiceReports' element={<InvoiceReports/>}/> 
+          <Route path='/InvoiceSettings' element={<InvoiceSettings/>}/> 
+          <Route path='/Invoicesz' element={<Invoicesz/>}/> 
+          <Route path='/InvoiceView' element={<InvoiceView/>}/> 
+          <Route path='/JobApplicants' element={<JobApplicants/>}/> 
+          <Route path='/JobDetails' element={<JobDetails/>}/> 
+          <Route path='/JobList' element={<JobList/>}/> 
+          <Route path='/Jobsz' element={<Jobsz/>}/> 
+          <Route path='/JobView' element={<JobView/>}/> 
+          <Route path='/KnowledgeBase' element={<KnowledgeBase/>}/> 
+          <Route path='/KnowledgeBaseView' element={<KnowledgeBaseView/>}/> 
+          <Route path='/Leads' element={<Leads/>}/> 
+          <Route path='/Leaves' element={<Leaves/>}/> 
+          <Route path='/LeavesEmployee' element={<LeavesEmployee/>}/> 
+          <Route path='/LeavesSettings' element={<LeavesSettings/>}/> 
+          <Route path='/LeaveType' element={<LeaveType/>}/> 
+          <Route path='/Localization' element={<Localization/>}/> 
+          <Route path='/LockScreen' element={<LockScreen/>}/> 
+          <Route path='/LogIn' element={<LogIn/>}/> 
+          <Route path='/MailView' element={<MailView/>}/> 
+          <Route path='/NotificationSettings' element={<NotificationSettings/>}/> 
+          <Route path='/OTP' element={<OTP/>}/> 
+          <Route path='/OutGoingCall' element={<OutGoingCall/>}/> 
+          <Route path='/Overtime' element={<Overtime/>}/> 
+          <Route path='/Paymentsz' element={<Paymentsz/>}/> 
+          <Route path='/PayrollItems' element={<PayrollItems/>}/> 
+          <Route path='/Performance' element={<Performance/>}/> 
+          <Route path='/PerformanceAppraisal' element={<PerformanceAppraisal/>}/> 
+          <Route path='/PerformanceIndicator' element={<PerformanceIndicator/>}/> 
+          <Route path='/Policies' element={<Policies/>}/> 
+          <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/> 
+          <Route path='/Profilee' element={<Profilee/>}/> 
+          <Route path='/ProjectListt' element={<ProjectListt/>}/> 
+          <Route path='/Projectsz' element={<Projectsz/>}/> 
+          <Route path='/ProjectView' element={<ProjectView/>}/> 
+          <Route path='/Promotion' element={<Promotion/>}/> 
+          <Route path='/ProvidentFund' element={<ProvidentFund/>}/> 
+          <Route path='/Register' element={<Register/>}/> 
+          <Route path='/Resignation' element={<Resignation/>}/> 
+          <Route path='/RolesPermission' element={<RolesPermission/>}/> 
+          <Route path='/Salary' element={<Salary/>}/> 
+          <Route path='/ToDo_List' element={<SalarySettings/>}/> 
+          <Route path='/Search' element={<Search/>}/> 
+          <Route path='/Settingsz' element={<Settingsz/>}/> 
+          <Route path='/SubscribedCompanies' element={<SubscribedCompanies/>}/> 
+          <Route path='/Subscriptions' element={<Subscriptions/>}/> 
+          <Route path='/SubscriptionsCompany' element={<SubscriptionsCompany/>}/> 
+          <Route path='/TablesBasic' element={<TablesBasic/>}/> 
+          <Route path='/TaskBoard' element={<TaskBoard/>}/> 
+          <Route path='/Taskz' element={<Taskz/>}/> 
+          <Route path='/Taxes' element={<Taxes/>}/> 
+          <Route path='/Termination' element={<Termination/>}/> 
+          <Route path='/Terms' element={<Terms/>}/> 
+          <Route path='/ThemeSettings' element={<ThemeSettings/>}/> 
+          <Route path='/TicketView' element={<TicketView/>}/> 
+          <Route path='/TimeSheets' element={<TimeSheets/>}/> 
+          <Route path='/Trainers' element={<Trainers/>}/> 
+          <Route path='/Training' element={<Training/>}/> 
+          <Route path='/TrainingType' element={<TrainingType/>}/> 
+          <Route path='/Usersz' element={<Usersz/>}/> 
+          <Route path='/VideoCall' element={<VideoCall/>}/> 
+          <Route path='/VoiceCall' element={<VoiceCall/>}/> 
+     
+        </Routes>  
+         </Router>     
+
+
 {/* MyAdmin */}
       {/* <Activities/> */}
       {/* <Assets/> */}

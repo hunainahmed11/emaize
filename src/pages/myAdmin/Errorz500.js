@@ -1,7 +1,8 @@
 
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 function Errorz500() {
+  
   return (
      <>
      {/* Main Wrapper */}
@@ -12,9 +13,9 @@ function Errorz500() {
            <i className="fa fa-warning" /> Oops! Something went wrong
          </h3>
          <p>The page you requested was not found.</p>
-         <a href="index.html" className="btn btn-custom">
+         <Link to="/Indexx" className="btn btn-custom">
            Back to Home
-         </a>
+         </Link>
        </div>
      </div>
      {/* /Main Wrapper */}

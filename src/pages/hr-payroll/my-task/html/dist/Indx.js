@@ -1,8 +1,68 @@
 import React from 'react'
 import '../../../../../../src/assets/payroll/css/Emaize.style.min.scss';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink } from "react-router-dom";
 
 function Indx() {
+  
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  
+
+  const handleToggle = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  const [isCollap, setIsCollap] = useState(true);
+  
+
+  const handleToggl = () => {
+    setIsCollap(!isCollap);
+  };
+
+  const [isColla, setIsColla] = useState(true);
+  
+
+  const handleTogg = () => {
+    setIsColla(!isColla);
+  };
+
+  const [isColl, setIsColl] = useState(true);
+  
+
+  const handleTo = () => {
+    setIsColl(!isColl);
+  };
+
+
+  const [isCol, setIsCol] = useState(true);
+  
+
+  const handleT = () => {
+    setIsCol(!isCol);
+  };
+
+  const [isCo, setIsCo] = useState(true);
+  
+
+  const handle = () => {
+    setIsCo(!isCo);
+  };
+
+  const [isCollapsePayroll, setIsCollapsePayroll] = useState(true);
+  
+
+  const handlePayroll = () => {
+    setIsCollapsePayroll(!isCollapsePayroll);
+  };
+
+
+  const [isCollapseTasks, setIsCollapseTasks] = useState(true);
+  
+
+  const handleTasks = () => {
+    setIsCollapseTasks(!isCollapseTasks);
+  };
   return (
     <>
     <div id="mytask-layout" className="theme-indigo">
@@ -24,288 +84,287 @@ function Indx() {
       {/* </a> */}
       {/* Menu: main ul */}
       <ul className="menu-list flex-grow-1 mt-3">
-        <li className="collapsed">
-          <a
-            className="m-link active"
-            data-bs-toggle="collapse"
-            data-bs-target="#dashboard-Components"
-            href='#'
-          >
-            <i className="icofont-home fs-5" /> <span>Dashboard</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse show" id="dashboard-Components">
-            <li>
-              {/* <a className="ms-link active" href="index-2.html"> */}
-                {" "}
-                <Link to="/Indx2" className="ms-link active"> 
-                <span>Hr Dashboard</span>.
-                </Link>
-              {/* </a> */}
-            </li>
-            <li>
-              {/* <a className="ms-link" href="project-dashboard.html"> */}
-                {" "}
-                <Link to="/project_Dashboard" className="ms-link">
-                <span>Project Dashboard</span>
-                </Link>
-              {/* </a> */}
-            </li>
-          </ul>
-        </li>
-        <li className="collapsed">
-          <a
-            className="m-link"
-            data-bs-toggle="collapse"
-            data-bs-target="#project-Components"
-            href="#"
-          >
-            <i className="icofont-briefcase" />
-            <span>Projects</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse" id="project-Components">
-            <li>
-              {/* <a className="ms-link" href="projects.html"> */}
-                <Link to="/Projects" className='ms-link'>
-                <span>Projects</span>
-                </Link>
-              {/* </a> */}
-            </li>
-            <li>
-              {/* <a className="ms-link" href="task.html"> */}
-              <Link to="/Task" className='ms-link'>
-                <span>Tasks</span>
-              </Link>
-            </li>
-            <li>
-              {/* <a className="ms-link" href="timesheet.html"> */}
-              <Link to="/TimeSheet" className='ms-link'>
-                <span>Timesheet</span>
-              </Link>
-            </li>
-            <li>
-              {/* <a className="ms-link" href="team-leader.html"> */}
-            <Link to="/Team_Leader" className='ms-link'>
 
-                <span>Leaders</span>
-            </Link>
-              {/* </a> */}
-            </li>
-          </ul>
-        </li>
-        <li className="collapsed">
-          <a
-            className="m-link"
-            data-bs-toggle="collapse"
-            data-bs-target="#tikit-Components"
-            href="#"
-          >
-            <i className="icofont-ticket" /> <span>Tickets</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse" id="tikit-Components">
-            <li>
-              {/* <a className="ms-link" href="tickets.html"> */}
-                {" "}
-                <Link to="/Ticket" className="ms-link">
-                <span>Tickets View</span>
-                </Link>
-            </li>
-            <li>
-              {/* <a className="ms-link" href="ticket-detail.html"> */}
+    
+    
+     
 
-                {" "}
-                <Link to="/Ticket_Detail" className="ms-link">
-                <span>Ticket Detail</span>
-              </Link>
-            </li>
-          </ul>
+    <li className={isCollap ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handleToggl}
+      >
+        <i className="icofont-home fs-5" />
+        <span>Dashboard</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isCollap ? "collapse" : "show"}`} id="project-Components">
+        <li>
+          <NavLink to="/Indx2" className="ms-link" activeClassName="active">
+            <span>Hr Dashboard</span>
+          </NavLink>
         </li>
-        <li className="collapsed">
-          <a
-            className="m-link"
-            data-bs-toggle="collapse"
-            data-bs-target="#client-Components"
-            href="#"
-          >
-            <i className="icofont-user-male" /> <span>Our Clients</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse" id="client-Components">
-            <li>
-              {/* <a className="ms-link" href="ourclients.html"> */}
-              <Link to="/OurClients" className="ms-link" >
-                {" "}
-                <span>Clients</span>
-                </Link>
-              {/* </a> */}
-            </li>
-            <li>
-              <Link className="ms-link" to="/Profile">
-                {" "}
-                <span>Client Profile</span>
-              </Link>
-            </li>
-          </ul>
+        <li>
+          <NavLink to="/Project_Dashboard" className="ms-link" activeClassName="active">
+            <span>Project Dashboard</span>
+          </NavLink>
         </li>
-        <li className="collapsed">
-          <a
-            className="m-link"
-            data-bs-toggle="collapse"
-            data-bs-target="#emp-Components"
-            href="#"
-          >
-            <i className="icofont-users-alt-5" /> <span>Employees</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse" id="emp-Components">
-            <li>
-              {/* <a className="ms-link" href="members.html"> */}
-              <Link to="/Members" className="ms-link">
-                {" "}
-                <span>Members</span>
-              </Link>
-              {/* </a> */}
+      
+      </ul>
+    </li>
+    <li className={isCollapsed ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handleToggle}
+      >
+        <i className="icofont-briefcase" />
+        <span>Projects</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isCollapsed ? "collapse" : "show"}`} id="project-Components">
+        <li>
+          <NavLink to="/Projects" className="ms-link" activeClassName="active">
+            <span>Projects</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Task" className="ms-link" activeClassName="active">
+            <span>Tasks</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/TimeSheet" className="ms-link" activeClassName="active">
+            <span>Timesheet</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Team_Leader" className="ms-link" activeClassName="active">
+            <span>Leaders</span>
+          </NavLink>
+        </li>
+      </ul>
+    </li>
+       
+        <li className={isColla ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handleTogg}
+      >
+        <i className="icofont-ticket" />
+        <span>Tickets</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isColla ? "collapse" : "show"}`} id="project-Components">
+        <li>
+          <NavLink to="/Tickets" className="ms-link" activeClassName="active">
+            <span>Tickets View</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Ticket_Detail" className="ms-link" activeClassName="active">
+            <span>Task Detail</span>
+          </NavLink>
+        </li>
+      
+      </ul>
+    </li>
 
-            </li>
-            <li>
-              {/* <a className="ms-link" href="employee-profile.html"> */}
-                {" "}
-                <Link to="/Employee_Profile" className="ms-link">
-                <span>Members Profile</span>
-              </Link>
-              {/* </a> */}
+       <li className={isColl ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handleTo}
+      >
+        <i className="icofont-user-male" />
+        <span>Our clients</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isColl ? "collapse" : "show"}`} id="project-Components">
+        <li>
+          <NavLink to="/OurClients" className="ms-link" activeClassName="active">
+            <span>Clients</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Profile" className="ms-link" activeClassName="active">
+            <span>ClientProfile</span>
+          </NavLink>
+        </li>
+      
+      </ul>
+    </li>
 
-            </li>
-            <li>
-              {/* <a className="ms-link" href="holidays.html"> */}
-                {" "}
-                <Link to="/Holidays" className="ms-link">
-                
-                <span>Holidays</span>
-              </Link>
-            </li>
-            <li>
-              {/* <a className="ms-link" href="attendance-employees.html"> */}
-                {" "}
-                <Link to="/Attendance_Employees" className="ms-link">
-                <span>Attendance Employees</span>
-              </Link>
-            </li>
-            <li>
-              <Link className="ms-link" to="Attendance">
-                {" "}
-                <span>Attendance</span>
-              </Link>
-            </li>
-            <li>
-              <Link className="ms-link" to="Leave_Request">
+      
+
+        <li className={isCol ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handleT}
+      >
+        <i className="icofont-users-alt-5" />
+        <span>Employees</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isCol ? "collapse" : "show"}`} id="project-Components">
+        <li>
+          <NavLink to="/Attendance_Employees" className="ms-link" activeClassName="active">
+            <span>Attendance Employees</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Attendance" className="ms-link" activeClassName="active">
+            <span>Attendance</span>
+          </NavLink>
+        </li>
+        <li>
+              <NavLink className="ms-link" to="Leave_Request"  activeClassName="active">
                 {" "}
                 <span>Leave Request</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="ms-link" to="Department">
+              <NavLink className="ms-link" to="Department"  activeClassName="active">
                 {" "}
                 <span>Department</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="ms-link" to="Loan">
+              <NavLink className="ms-link" to="Loan">
                 {" "}
                 <span>Loan</span>
-              </Link>
+              </NavLink>
             </li>
-          </ul>
-        </li>
-        <li className="collapsed">
-          <a
-            className="m-link"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu-Componentsone"
-            href="#"
-          >
-            <i className="icofont-ui-calculator" /> <span>Accounts</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse" id="menu-Componentsone">
-            <li>
+      
+      </ul>
+    </li>
+
+     
+
+        <li className={isCo ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handle}
+      >
+        <i className="icofont-ui-calculator" />
+        <span>Accounts</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isCo ? "collapse" : "show"}`} id="project-Components">
+      <li>
               {/* <a className="ms-link" href="invoices.html"> */}
-              <Link to="/Invoices" className="ms-link">
+              <NavLink to="/Invoices" className="ms-link"  activeClassName="active">
                 <span>Invoices</span>{" "}
-                </Link>
+                </NavLink>
               {/* </a> */}
             </li>
             <li>
               {/* <a className="ms-link" href="payments.html"> */}
-              <Link to="/Payments" className="ms-link">
+              <NavLink to="/Payments" className="ms-link"  activeClassName="active">
                 <span>Payments</span>{" "}
-                </Link>
+                </NavLink>
               {/* </a> */}
             </li>
             <li>
               {/* <a className="ms-link" href="expenses.html"> */}
-              <Link to="/Expenses" className="ms-link">
+              <NavLink to="/Expenses" className="ms-link"  activeClassName="active">
                 <span>Expenses</span>{" "}
-              </Link>
+              </NavLink>
             </li>
             <li>
               {/* <a className="ms-link" href="create-invoice.html"> */}
-              <Link to="/Create_Invoice" className="ms-link">
+              <NavLink to="/Create_Invoice" className="ms-link" activeClassName="active">
                 <span>Create Invoice</span>{" "}
-              </Link>
+              </NavLink>
             </li>
-          </ul>
-        </li>
-        <li className="collapsed">
-          <a
-            className="m-link"
-            data-bs-toggle="collapse"
-            data-bs-target="#payroll-Components"
-            href="#"
-          >
-            <i className="icofont-users-alt-5" /> <span>Payroll</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse" id="payroll-Components">
             <li>
-              {/* <a className="ms-link" href="salaryslip.html"> */}
-              <Link to="/SalarySlip" className="ms-link">
-                <span>Employee Salary</span>{" "}
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="collapsed">
-          <a
-            className="m-link"
-            data-bs-toggle="collapse"
-            data-bs-target="#app-Components"
-            href="#"
-          >
-            <i className="icofont-contrast" /> <span>Tasks</span>{" "}
-            <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
-          </a>
-          {/* Menu: Sub menu ul */}
-          <ul className="sub-menu collapse" id="app-Components">
-            <li>
-              {/* <a className="ms-link" href="calendar.html"> */}
-              <Link className="ms-link" to="/Calender">
+              <NavLink className="ms-link" to="Loan"  activeClassName="active">
                 {" "}
-                <span>Calander</span>
-              </Link>
+                <span>Loan</span>
+              </NavLink>
             </li>
-            {/* <li><a class="ms-link" href="chat.html"><span>Chat App</span></a></li> */}
-          </ul>
-        </li>
+      
+      </ul>
+    </li>
+
+       
+
+        <li className={isCollapsePayroll ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handlePayroll}
+      >
+        <i className="icofont-users-alt-5" />
+        <span>Payroll</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isCollapsePayroll ? "collapse" : "show"}`} id="project-Components">
+      <li>
+              {/* <a className="ms-link" href="invoices.html"> */}
+              <NavLink to="/SalarySlip" className="ms-link"  activeClassName="active">
+                <span>Employee Salary</span>{" "}
+                </NavLink>
+              {/* </a> */}
+            </li>
+           
+      
+      </ul>
+    </li>
+
+      
+
+        <li className={isCollapseTasks ? "collapsed" : ""}>
+      <a
+        className="m-link"
+        data-bs-toggle="collapse"
+        data-bs-target="#project-Components"
+        href="#"
+        onClick={handleTasks}
+      >
+        <i className="icofont-contrast" />
+        <span>Tasks</span>{" "}
+        <span className="arrow icofont-dotted-down ms-auto text-end fs-5" />
+      </a>
+      {/* Menu: Sub menu ul */}
+      <ul className={`sub-menu ${isCollapseTasks ? "collapse" : "show"}`} id="project-Components">
+      <li>
+              {/* <a className="ms-link" href="invoices.html"> */}
+              <NavLink to="/Calender" className="ms-link"  activeClassName="active">
+                <span>Calendar</span>{" "}
+                </NavLink>
+              {/* </a> */}
+            </li>
+           
+      
+      </ul>
+    </li>
+
         {/* <li class="collapsed">
                   <a class="m-link" data-bs-toggle="collapse" data-bs-target="#extra-Components" href="#">
                       <i class="icofont-code-alt"></i> <span>Other Pages</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a> */}

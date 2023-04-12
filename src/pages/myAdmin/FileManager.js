@@ -1,6 +1,141 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 function FileManager() {
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+
+  const toggleSubmenu = () => {
+    setIsSubmenuOpen(!isSubmenuOpen);
+  };
+
+  const [isSubmenuApp, setIsSubmenuApp] = useState(false);
+
+  const toggleSubmenuApp = () => {
+    setIsSubmenuApp(!isSubmenuApp);
+  };
+
+  const [isSubmenuAppMenu, setIsSubmenuAppMenu] = useState(false);
+
+  const toggleSubmenuAppMenu = () => {
+    setIsSubmenuAppMenu(!isSubmenuAppMenu);
+  };
+
+  const [isSubmenuEmployee, setIsSubmenuEmployee] = useState(false);
+
+  const toggleSubmenuEmployee = () => {
+    setIsSubmenuEmployee(!isSubmenuEmployee);
+  };
+
+  const [isSubmenuProject, setIsSubmenuProject] = useState(false);
+
+  const toggleSubmenuProject = () => {
+    setIsSubmenuProject(!isSubmenuProject);
+  };
+
+  const [isSubmenuAccounts, setIsSubmenuAccounts] = useState(false);
+
+  const toggleSubmenuAccounts = () => {
+    setIsSubmenuAccounts(!isSubmenuAccounts);
+  };
+  const [isSubmenuPayroll, setIsSubmenuPayroll] = useState(false);
+
+  const toggleSubmenuPayroll = () => {
+    setIsSubmenuPayroll(!isSubmenuAccounts);
+  };
+
+  const [isSubmenuReports, setIsSubmenuReports] = useState(false);
+
+  const toggleSubmenuReports = () => {
+    setIsSubmenuReports(!isSubmenuReports);
+  };
+
+  const [isSubmenuPerformance, setIsSubmenuPerformance] = useState(false);
+
+  const toggleSubmenuPerformance = () => {
+    setIsSubmenuPerformance(!isSubmenuPerformance);
+  };
+  const [isSubmenuGoals, setIsSubmenuGoals] = useState(false);
+
+  const toggleSubmenuGoals = () => {
+    setIsSubmenuGoals(!isSubmenuGoals);
+  };
+  const [isSubmenuTraining, setIsSubmenuTraining] = useState(false);
+
+  const toggleSubmenuTraining = () => {
+    setIsSubmenuTraining(!isSubmenuTraining);
+  };
+
+  const [isSubmenuJobs, setIsSubmenuJobs] = useState(false);
+
+  const toggleSubmenuJobs = () => {
+    setIsSubmenuJobs(!isSubmenuJobs);
+  };
+
+  const [isSubmenuProfile, setIsSubmenuProfile] = useState(false);
+
+  const toggleSubmenuProfile = () => {
+    setIsSubmenuProfile(!isSubmenuProfile);
+  };
+  const [isSubmenuAuthentication, setIsSubmenuAuthentication] = useState(false);
+
+  const toggleSubmenuAuthentication = () => {
+    setIsSubmenuAuthentication(!isSubmenuAuthentication);
+  };
+  const [isSubmenuErrorPages, setIsSubmenuErrorPages] = useState(false);
+
+  const toggleSubmenuErrorPages= () => {
+    setIsSubmenuErrorPages(!isSubmenuErrorPages);
+  };
+
+  const [isSubmenuSubscriptions, setIsSubmenuSubscriptions] = useState(false);
+
+  const toggleSubmenuSubscriptions= () => {
+    setIsSubmenuSubscriptions(!isSubmenuSubscriptions);
+  };
+
+  const [isSubmenuPages, setIsSubmenuPages] = useState(false);
+
+  const toggleSubmenuPages= () => {
+    setIsSubmenuPages(!isSubmenuPages);
+  };
+  const [isSubmenuForms, setIsSubmenuForms] = useState(false);
+
+  const toggleSubmenuForms= () => {
+    setIsSubmenuForms(!isSubmenuForms);
+  };
+  const [isSubmenuTables, setIsSubmenuTables] = useState(false);
+
+  const toggleSubmenuTables= () => {
+    setIsSubmenuTables(!isSubmenuTables);
+  };
+
+// header
+
+  const [isCollap, setIsCollap] = useState(true);
+  
+
+  const handleToggl = () => {
+    setIsCollap(!isCollap);
+  };
+
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  
+
+  const handleToggle = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+  const [isColla, setIsColla] = useState(true);
+  
+
+  const handleTogg = () => {
+    setIsColla(!isColla);
+  };
+  const [isColl, setIsColl] = useState(true);
+  
+
+  const handleTo = () => {
+    setIsColl(!isColl);
+  };
   return (
     <>
     {/* Main Wrapper */}
@@ -9,16 +144,16 @@ function FileManager() {
       <div className="header">
         {/* Logo */}
         <div className="header-left">
-          <a href="index.html" className="logo">
+          <Link to="/Indexx" className="logo">
             <img src="assets/img/logo.png" width={40} height={40} alt="" />
-          </a>
+          </Link>
         </div>
         {/* /Logo */}
         <a id="toggle_btn" href="javascript:void(0);">
           <span className="bar-icon">
-            <span />
-            <span />
-            <span />
+            <span/>
+            <span/>
+            <span/>
           </span>
         </a>
         {/* Header Title */}
@@ -51,17 +186,18 @@ function FileManager() {
           </li>
           {/* /Search */}
           {/* Flag */}
-          <li className="nav-item dropdown has-arrow flag-nav">
+          <li className={isCollap ? "collapsed" : ""} >
             <a
               className="nav-link dropdown-toggle"
               data-toggle="dropdown"
               href="#"
               role="button"
+              onClick={handleToggl}
             >
               <img src="assets/img/flags/us.png" alt="" height={20} />{" "}
               <span>English</span>
             </a>
-            <div className="dropdown-menu dropdown-menu-right">
+            <div className={`sub-menu ${isCollap ? "collapse" : "show"}`}>
               <a href="javascript:void(0);" className="dropdown-item">
                 <img src="assets/img/flags/us.png" alt="" height={16} /> English
               </a>
@@ -78,16 +214,17 @@ function FileManager() {
           </li>
           {/* /Flag */}
           {/* Notifications */}
-          <li className="nav-item dropdown">
+          <li className={isCollapsed ? "collapsed" : ""}>
             <a
               href="#"
               className="dropdown-toggle nav-link"
               data-toggle="dropdown"
+              onClick={handleToggle}
             >
               <i className="fa fa-bell-o" />{" "}
               <span className="badge badge-pill">3</span>
             </a>
-            <div className="dropdown-menu notifications">
+            <div className={`sub-menu ${isCollapsed ? "collapse" : "show"}`}>
               <div className="topnav-dropdown-header">
                 <span className="notification-title">Notifications</span>
                 <a href="javascript:void(0)" className="clear-noti">
@@ -98,7 +235,7 @@ function FileManager() {
               <div className="noti-content">
                 <ul className="notification-list">
                   <li className="notification-message">
-                    <a href="activities.html">
+                    <Link to="/Activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src="assets/img/profiles/avatar-02.jpg" />
@@ -116,10 +253,10 @@ function FileManager() {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="activities.html">
+                  <Link to="/Activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src="assets/img/profiles/avatar-03.jpg" />
@@ -137,10 +274,10 @@ function FileManager() {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="activities.html">
+                  <Link to="/Activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src="assets/img/profiles/avatar-06.jpg" />
@@ -160,10 +297,10 @@ function FileManager() {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="activities.html">
+                  <Link to="/Activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src="assets/img/profiles/avatar-17.jpg" />
@@ -181,10 +318,10 @@ function FileManager() {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="activities.html">
+                  <Link to="/Activities">
                       <div className="media">
                         <span className="avatar">
                           <img alt="" src="assets/img/profiles/avatar-13.jpg" />
@@ -202,27 +339,30 @@ function FileManager() {
                           </p>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
               <div className="topnav-dropdown-footer">
-                <a href="activities.html">View all Notifications</a>
+              <Link to="/Activities">View all Notifications</Link>
               </div>
             </div>
           </li>
           {/* /Notifications */}
           {/* Message Notifications */}
-          <li className="nav-item dropdown">
+          {/* <li className="nav-item dropdown"> */}
+          <li cclassName={isColla ? "collapsed" : ""}>
             <a
               href="#"
               className="dropdown-toggle nav-link"
               data-toggle="dropdown"
+              onClick={handleTogg}
             >
               <i className="fa fa-comment-o" />{" "}
               <span className="badge badge-pill">8</span>
             </a>
-            <div className="dropdown-menu notifications">
+            {/* <div className="dropdown-menu notifications"> */}
+            <div className={`sub-menu ${isColla ? "collapse" : "show"}`}>
               <div className="topnav-dropdown-header">
                 <span className="notification-title">Messages</span>
                 <a href="javascript:void(0)" className="clear-noti">
@@ -233,7 +373,7 @@ function FileManager() {
               <div className="noti-content">
                 <ul className="notification-list">
                   <li className="notification-message">
-                    <a href="chat.html">
+                    <Link to="/ChatAdmin">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -249,10 +389,10 @@ function FileManager() {
                           </span>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="chat.html">
+                  <Link to="/ChatAdmin">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -268,10 +408,10 @@ function FileManager() {
                           </span>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="chat.html">
+                  <Link to="/ChatAdmin">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -290,10 +430,10 @@ function FileManager() {
                           </span>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="chat.html">
+                  <Link to="/ChatAdmin">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -309,10 +449,10 @@ function FileManager() {
                           </span>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className="notification-message">
-                    <a href="chat.html">
+                  <Link to="/ChatAdmin">
                       <div className="list-item">
                         <div className="list-left">
                           <span className="avatar">
@@ -331,21 +471,22 @@ function FileManager() {
                           </span>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
               <div className="topnav-dropdown-footer">
-                <a href="chat.html">View all Messages</a>
+              <Link to="/ChatAdmin">View all Messages</Link>
               </div>
             </div>
           </li>
           {/* /Message Notifications */}
-          <li className="nav-item dropdown has-arrow main-drop">
+          <li className={isColl ? "collapsed" : ""}>
             <a
               href="#"
               className="dropdown-toggle nav-link"
               data-toggle="dropdown"
+              onClick={handleTo}
             >
               <span className="user-img">
                 <img src="assets/img/profiles/avatar-21.jpg" alt="" />
@@ -353,16 +494,16 @@ function FileManager() {
               </span>
               <span>Admin</span>
             </a>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="profile.html">
+            <div className={`sub-menu ${isColl ? "collapse" : "show"}`} >
+              <Link className="dropdown-item" to="/Profilee">
                 My Profile
-              </a>
-              <a className="dropdown-item" href="settings.html">
+              </Link>
+              <Link className="dropdown-item" to="/Settingsz">
                 Settings
-              </a>
-              <a className="dropdown-item" href="login.html">
+              </Link>
+              <Link className="dropdown-item" to="/logIn">
                 Logout
-              </a>
+              </Link>
             </div>
           </li>
         </ul>
@@ -378,15 +519,15 @@ function FileManager() {
             <i className="fa fa-ellipsis-v" />
           </a>
           <div className="dropdown-menu dropdown-menu-right">
-            <a className="dropdown-item" href="profile.html">
+            <Link className="dropdown-item" to="/Profilee">
               My Profile
-            </a>
-            <a className="dropdown-item" href="settings.html">
+            </Link>
+            <Link className="dropdown-item" to="/Settingsz">
               Settings
-            </a>
-            <a className="dropdown-item" href="login.html">
+            </Link>
+            <Link className="dropdown-item" href="logIn">
               Logout
-            </a>
+            </Link>
           </div>
         </div>
         {/* /Mobile Menu */}
@@ -400,469 +541,518 @@ function FileManager() {
               <li className="menu-title">
                 <span>Main</span>
               </li>
+              {/* Dashoard li Side Barr */}
               <li className="submenu">
-                <a href="#">
-                  <i className="la la-dashboard" /> <span> Dashboard</span>{" "}
-                  <span className="menu-arrow" />
-                </a>
-                <ul style={{ display: "none" }}>
-                  <li>
-                    <a href="index.html">Admin Dashboard</a>
-                  </li>
-                  <li>
-                    <a href="employee-dashboard.html">Employee Dashboard</a>
-                  </li>
-                </ul>
-              </li>
+      <a href="#" onClick={toggleSubmenu}>
+        <i className="la la-dashboard" /> <span> Dashboard</span>{" "}
+        <span className="menu-arrow" />
+      </a>
+      {isSubmenuOpen && (
+        <ul>
+          <li>
+            <Link to="/Indexx">Admin Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/EmployeeDashboard">Employee Dashboard</Link>
+          </li>
+        </ul>
+      )}
+    </li>
+  
+
+
+
+
+
+
+     
+{/* Apps sidebar */}
+
               <li className="submenu">
-                <a href="#">
+              <a href="#" onClick={toggleSubmenuApp}>
                   <i className="la la-cube" /> <span> Apps</span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuApp && (
+                  <ul>
                   <li>
-                    <a href="chat.html">Chat</a>
+                    <Link to="/ChatAdmin">Chat</Link>
                   </li>
                   <li className="submenu">
-                    <a href="#">
+                  <a href="#" onClick={toggleSubmenuAppMenu}>
                       <span> Calls</span> <span className="menu-arrow" />
                     </a>
-                    <ul style={{ display: "none" }}>
+                    {isSubmenuAppMenu && (
+
+                    <ul>
                       <li>
-                        <a href="voice-call.html">Voice Call</a>
+                        <Link to="/VoiceCall">Voice Call</Link>
                       </li>
                       <li>
-                        <a href="video-call.html">Video Call</a>
+                        <Link to="/VideoCall">Video Call</Link>
                       </li>
                       <li>
-                        <a href="outgoing-call.html">Outgoing Call</a>
+                        <Link to="/OutGoingCall">Outgoing Call</Link>
                       </li>
                       <li>
-                        <a href="incoming-call.html">Incoming Call</a>
+                        <Link to="/IncommingCall">Incoming Call</Link>
                       </li>
                     </ul>
+                    )}
+
                   </li>
                   <li>
-                    <a href="events.html">Calendar</a>
+                    <Link to="/Events">Calendar</Link>
                   </li>
                   <li>
-                    <a href="contacts.html">Contacts</a>
+                    <Link to="/Contacts">Contacts</Link>
                   </li>
                   <li>
-                    <a href="inbox.html">Email</a>
+                    <Link to="/Inboxx">Email</Link>
                   </li>
                   <li>
-                    <a className="active" href="file-manager.html">
-                      File Manager
-                    </a>
+                    <Link to="/FileManager">File Manager</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="menu-title">
                 <span>Employees</span>
               </li>
               <li className="submenu">
-                <a href="#" className="noti-dot">
+                <a href="#" className="noti-dot" onClick={toggleSubmenuEmployee}>
                   <i className="la la-user" /> <span> Employees</span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuEmployee && (
+                <ul>
                   <li>
-                    <a href="employees.html">All Employees</a>
+                    <Link to="Employeez">All Employees</Link>
                   </li>
                   <li>
-                    <a href="holidays.html">Holidays</a>
+                    <Link to="/Holiday">Holidays</Link>
                   </li>
                   <li>
-                    <a href="leaves.html">
+                    <Link to="/Leaves">
                       Leaves (Admin){" "}
                       <span className="badge badge-pill bg-primary float-right">
                         1
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="leaves-employee.html">Leaves (Employee)</a>
+                    <Link to="/LeavesEmployee">Leaves (Employee)</Link>
                   </li>
                   <li>
-                    <a href="leave-settings.html">Leave Settings</a>
+                    <Link to="/LeaveSettings">Leave Settings</Link>
                   </li>
                   <li>
-                    <a href="attendance.html">Attendance (Admin)</a>
+                    <Link to="/AttendanceAdmin">Attendance (Admin)</Link>
                   </li>
                   <li>
-                    <a href="attendance-employee.html">Attendance (Employee)</a>
+                    <Link to="/AttendanceEmployee">Attendance (Employee)</Link>
                   </li>
                   <li>
-                    <a href="departments.html">Departments</a>
+                    <Link to="/DepartmentAdmin">Departments</Link>
                   </li>
                   <li>
-                    <a href="designations.html">Designations</a>
+                    <Link to="/Designation">Designations</Link>
                   </li>
                   <li>
-                    <a href="timesheet.html">Timesheet</a>
+                    <Link to="/TimeSheet">Timesheet</Link>
                   </li>
                   <li>
-                    <a href="overtime.html">Overtime</a>
+                    <Link to="/Overtime">Overtime</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
-                <a href="clients.html">
+                <Link to="/Clientsz">
                   <i className="la la-users" /> <span>Clients</span>
-                </a>
+                </Link>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuProject}>
                   <i className="la la-rocket" /> <span> Projects</span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
-                    <a href="projects.html">Projects</a>
+                    <Link to="/Projectsz">Projects</Link>
                   </li>
                   <li>
-                    <a href="tasks.html">Tasks</a>
+                  <Link to="/Taskz">Tasks</Link>
                   </li>
                   <li>
-                    <a href="task-board.html">Task Board</a>
+                  <Link to="/TaskBoard">Task Board</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
-                <a href="leads.html">
+                <Link to="/Leads">
                   <i className="la la-user-secret" /> <span>Leads</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="tickets.html">
+                <Link to="/TicketView">
                   <i className="la la-ticket" /> <span>Tickets</span>
-                </a>
+                </Link>
               </li>
               <li className="menu-title">
                 <span>HR</span>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuAccounts}>
                   <i className="la la-files-o" /> <span> Accounts </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuAccounts && (
+                <ul>
                   <li>
-                    <a href="estimates.html">Estimates</a>
+                    <Link to="/Estimates">Estimates</Link>
                   </li>
                   <li>
-                    <a href="invoices.html">Invoices</a>
+                    <Link to="/Invoicesz">Invoices</Link>
                   </li>
                   <li>
-                    <a href="payments.html">Payments</a>
+                  <Link to="/Paymentsz">Payments</Link>
                   </li>
                   <li>
-                    <a href="expenses.html">Expenses</a>
+                  <Link to="/Expenses">Expenses</Link>
                   </li>
                   <li>
-                    <a href="provident-fund.html">Provident Fund</a>
+                    <Link to="/ProvidentFund">Provident Fund</Link>
                   </li>
                   <li>
-                    <a href="taxes.html">Taxes</a>
+                    <Link to="/Taxes">Taxes</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuPayroll} >
                   <i className="la la-money" /> <span> Payroll </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
-                    <a href="salary.html"> Employee Salary </a>
+                    <Link to="/Salary"> Employee Salary </Link>
                   </li>
                   <li>
-                    <a href="salary-view.html"> Payslip </a>
+                    <Link to="/SalarySettings"> Payslip </Link>
                   </li>
                   <li>
-                    <a href="payroll-items.html"> Payroll Items </a>
+                    <Link to="/PayrollItems"> Payroll Items </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
-                <a href="policies.html">
+                <Link to="/Policies">
                   <i className="la la-file-pdf-o" /> <span>Policies</span>
-                </a>
+                </Link>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuReports}>
                   <i className="la la-pie-chart" /> <span> Reports </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
-                    <a href="expense-reports.html"> Expense Report </a>
+                    <Link to="/ExpenseReports"> Expense Report </Link>
                   </li>
                   <li>
-                    <a href="invoice-reports.html"> Invoice Report </a>
+                  <Link to="/InvoiceReports"> Invoice Report </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="menu-title">
                 <span>Performance</span>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuPerformance}>
                   <i className="la la-graduation-cap" />{" "}
                   <span> Performance </span> <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
-                    <a href="performance-indicator.html">
+                  <Link to="/PerformanceIndicator">
                       {" "}
                       Performance Indicator{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="performance.html"> Performance Review </a>
+                    <Link to="/Performance"> Performance Review </Link>
                   </li>
                   <li>
-                    <a href="performance-appraisal.html">
+                    <Link to="/PerformanceAppraisal">
                       {" "}
                       Performance Appraisal{" "}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuGoals}>
                   <i className="la la-crosshairs" /> <span> Goals </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuGoals && (
+                <ul>
                   <li>
-                    <a href="goal-tracking.html"> Goal List </a>
+                    <Link to="/GoalTracking"> Goal List </Link>
                   </li>
                   <li>
-                    <a href="goal-type.html"> Goal Type </a>
+                    <Link to="/GoalType"> Goal Type </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuTraining}>
                   <i className="la la-edit" /> <span> Training </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuTraining && (
+                <ul>
                   <li>
-                    <a href="training.html"> Training List </a>
+                  <Link to="/Training"> Training List </Link>
                   </li>
                   <li>
-                    <a href="trainers.html"> Trainers</a>
+                  <Link to="/Trainers"> Trainers</Link>
                   </li>
                   <li>
-                    <a href="training-type.html"> Training Type </a>
+                    <Link to="/TrainingType"> Training Type </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
-                <a href="promotion.html">
+                <Link to="/Promotion">
                   <i className="la la-bullhorn" /> <span>Promotion</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="resignation.html">
+                <Link to="/Resignation">
                   <i className="la la-external-link-square" />{" "}
                   <span>Resignation</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="termination.html">
+                <Link to="/Termination">
                   <i className="la la-times-circle" /> <span>Termination</span>
-                </a>
+                </Link>
               </li>
               <li className="menu-title">
                 <span>Administration</span>
               </li>
               <li>
-                <a href="assets.html">
+                <Link to="Assets">
                   <i className="la la-object-ungroup" /> <span>Assets</span>
-                </a>
+                </Link>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuJobs}>
                   <i className="la la-briefcase" /> <span> Jobs </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuJobs && (
+                <ul>
                   <li>
-                    <a href="jobs.html"> Manage Jobs </a>
+                    <Link to="/Jobsz"> Manage Jobs </Link>
                   </li>
                   <li>
-                    <a href="job-applicants.html"> Applied Candidates </a>
+                    <Link to="/JobApplicants"> Applied Candidates </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
-                <a href="knowledgebase.html">
+                <Link to="/knowledgeBase">
                   <i className="la la-question" /> <span>Knowledgebase</span>
-                </a>
+                </Link>
               </li>
-              <li>
-                <a href="activities.html">
+              <li className="active">
+                <Link to="/Activities">
                   <i className="la la-bell" /> <span>Activities</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="users.html">
+                <Link to="/Usersz">
                   <i className="la la-user-plus" /> <span>Users</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="settings.html">
+                <Link to="/Settingsz">
                   <i className="la la-cog" /> <span>Settings</span>
-                </a>
+                </Link>
               </li>
               <li className="menu-title">
                 <span>Pages</span>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuProfile}>
                   <i className="la la-user" /> <span> Profile </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProfile && (
+                <ul>
                   <li>
-                    <a href="profile.html"> Employee Profile </a>
+                    <Link to="/Profilee"> Employee Profile </Link>
                   </li>
                   <li>
-                    <a href="client-profile.html"> Client Profile </a>
+                    <Link to="/ClientProfile"> Client Profile </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuAuthentication}>
                   <i className="la la-key" /> <span> Authentication </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuAuthentication && (
+                <ul>
                   <li>
-                    <a href="login.html"> Login </a>
+                    <Link to="/LogIn"> Login </Link>
                   </li>
                   <li>
-                    <a href="register.html"> Register </a>
+                    <Link to="/Register"> Register </Link>
                   </li>
                   <li>
-                    <a href="forgot-password.html"> Forgot Password </a>
+                    <Link to="/ForgotPassword"> Forgot Password </Link>
                   </li>
                   <li>
-                    <a href="otp.html"> OTP </a>
+                    <Link to="/OTP"> OTP </Link>
                   </li>
                   <li>
-                    <a href="lock-screen.html"> Lock Screen </a>
+                    <Link to="/LockScreen"> Lock Screen </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuErrorPages}>
                   <i className="la la-exclamation-triangle" />{" "}
                   <span> Error Pages </span> <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuErrorPages && (
+                <ul>
                   <li>
-                    <a href="error-404.html">404 Error </a>
+                    <Link to="/Errorz404">404 Error </Link>
                   </li>
                   <li>
-                    <a href="error-500.html">500 Error </a>
+                    <Link to="/Errorz500">500 Error </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuSubscriptions}>
                   <i className="la la-hand-o-up" /> <span> Subscriptions </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuSubscriptions && (
+                <ul>
                   <li>
-                    <a href="subscriptions.html"> Subscriptions (Admin) </a>
+                    <Link to="/Subscriptions"> Subscriptions (Admin) </Link>
                   </li>
                   <li>
-                    <a href="subscriptions-company.html">
+                    <Link to="/SubscriptionsCompany">
                       {" "}
                       Subscriptions (Company){" "}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="subscribed-companies.html"> Subscribed Companies</a>
+                    <Link to="/SubscribedCompanies"> Subscribed Companies</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuPages} >
                   <i className="la la-columns" /> <span> Pages </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+            {isSubmenuPages && (
+                <ul>
                   <li>
-                    <a href="search.html"> Search </a>
+                    <Link to="/Search"> Search </Link>
                   </li>
                   <li>
-                    <a href="faq.html"> FAQ </a>
+                    <Link to="/FAQs"> FAQ </Link>
                   </li>
                   <li>
-                    <a href="terms.html"> Terms </a>
+                  <Link to="/Terms"> Terms </Link>
                   </li>
                   <li>
-                    <a href="privacy-policy.html"> Privacy Policy </a>
+                  <Link to="/PrivacyPolicy"> Privacy Policy </Link>
                   </li>
                   <li>
-                    <a href="blank-page.html"> Blank Page </a>
+                  <Link to="/BlankPage"> Blank Page </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="menu-title">
                 <span>UI Interface</span>
               </li>
               <li>
-                <a href="components.html">
+              <Link to="/Components">
                   <i className="la la-puzzle-piece" /> <span>Components</span>
-                </a>
+                </Link>
               </li>
-              <li className="submenu">
-                <a href="#">
+              <li className="submenu" onClick={toggleSubmenuForms}>
+                <a href="#" >
                   <i className="la la-object-group" /> <span> Forms </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuForms && (
+                <ul>
                   <li>
-                    <a href="form-basic-inputs.html">Basic Inputs </a>
+                    <Link to="/FormBasicInputs">Basic Inputs </Link>
                   </li>
                   <li>
-                    <a href="form-input-groups.html">Input Groups </a>
+                  <Link to="/FormInputGroups">Input Groups </Link>
                   </li>
                   <li>
-                    <a href="form-horizontal.html">Horizontal Form </a>
+                    <Link to="/FormHorizontal">Horizontal Form </Link>
                   </li>
                   <li>
-                    <a href="form-vertical.html"> Vertical Form </a>
+                    <Link to="/FormVertical"> Vertical Form </Link>
                   </li>
                   <li>
-                    <a href="form-mask.html"> Form Mask </a>
+                    <Link to="FormMask"> Form Mask </Link>
                   </li>
                   <li>
-                    <a href="form-validation.html"> Form Validation </a>
+                    <Link to="/FormValidation"> Form Validation </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuTables}>
                   <i className="la la-table" /> <span> Tables </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuTables && (
+                <ul>
                   <li>
-                    <a href="tables-basic.html">Basic Tables </a>
+                    <Link to="TablesBasic">Basic Tables </Link>
                   </li>
                   <li>
-                    <a href="data-tables.html">Data Table </a>
+                    <Link to="/DataTables">Data Table </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="menu-title">
                 <span>Extras</span>
