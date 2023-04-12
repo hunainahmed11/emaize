@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import { useState } from 'react';
-import '../../../src/assets/myadmin/css/style.scss'
 
 function Activities() {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -27,6 +26,117 @@ function Activities() {
   const toggleSubmenuEmployee = () => {
     setIsSubmenuEmployee(!isSubmenuEmployee);
   };
+
+  const [isSubmenuProject, setIsSubmenuProject] = useState(false);
+
+  const toggleSubmenuProject = () => {
+    setIsSubmenuProject(!isSubmenuProject);
+  };
+
+  const [isSubmenuAccounts, setIsSubmenuAccounts] = useState(false);
+
+  const toggleSubmenuAccounts = () => {
+    setIsSubmenuAccounts(!isSubmenuAccounts);
+  };
+  const [isSubmenuPayroll, setIsSubmenuPayroll] = useState(false);
+
+  const toggleSubmenuPayroll = () => {
+    setIsSubmenuPayroll(!isSubmenuAccounts);
+  };
+
+  const [isSubmenuReports, setIsSubmenuReports] = useState(false);
+
+  const toggleSubmenuReports = () => {
+    setIsSubmenuReports(!isSubmenuReports);
+  };
+
+  const [isSubmenuPerformance, setIsSubmenuPerformance] = useState(false);
+
+  const toggleSubmenuPerformance = () => {
+    setIsSubmenuPerformance(!isSubmenuPerformance);
+  };
+  const [isSubmenuGoals, setIsSubmenuGoals] = useState(false);
+
+  const toggleSubmenuGoals = () => {
+    setIsSubmenuGoals(!isSubmenuGoals);
+  };
+  const [isSubmenuTraining, setIsSubmenuTraining] = useState(false);
+
+  const toggleSubmenuTraining = () => {
+    setIsSubmenuTraining(!isSubmenuTraining);
+  };
+
+  const [isSubmenuJobs, setIsSubmenuJobs] = useState(false);
+
+  const toggleSubmenuJobs = () => {
+    setIsSubmenuJobs(!isSubmenuJobs);
+  };
+
+  const [isSubmenuProfile, setIsSubmenuProfile] = useState(false);
+
+  const toggleSubmenuProfile = () => {
+    setIsSubmenuProfile(!isSubmenuProfile);
+  };
+  const [isSubmenuAuthentication, setIsSubmenuAuthentication] = useState(false);
+
+  const toggleSubmenuAuthentication = () => {
+    setIsSubmenuAuthentication(!isSubmenuAuthentication);
+  };
+  const [isSubmenuErrorPages, setIsSubmenuErrorPages] = useState(false);
+
+  const toggleSubmenuErrorPages= () => {
+    setIsSubmenuErrorPages(!isSubmenuErrorPages);
+  };
+
+  const [isSubmenuSubscriptions, setIsSubmenuSubscriptions] = useState(false);
+
+  const toggleSubmenuSubscriptions= () => {
+    setIsSubmenuSubscriptions(!isSubmenuSubscriptions);
+  };
+
+  const [isSubmenuPages, setIsSubmenuPages] = useState(false);
+
+  const toggleSubmenuPages= () => {
+    setIsSubmenuPages(!isSubmenuPages);
+  };
+  const [isSubmenuForms, setIsSubmenuForms] = useState(false);
+
+  const toggleSubmenuForms= () => {
+    setIsSubmenuForms(!isSubmenuForms);
+  };
+  const [isSubmenuTables, setIsSubmenuTables] = useState(false);
+
+  const toggleSubmenuTables= () => {
+    setIsSubmenuTables(!isSubmenuTables);
+  };
+
+// header
+
+  const [isCollap, setIsCollap] = useState(true);
+  
+
+  const handleToggl = () => {
+    setIsCollap(!isCollap);
+  };
+
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  
+
+  const handleToggle = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+  const [isColla, setIsColla] = useState(true);
+  
+
+  const handleTogg = () => {
+    setIsColla(!isColla);
+  };
+  const [isColl, setIsColl] = useState(true);
+  
+
+  const handleTo = () => {
+    setIsColl(!isColl);
+  };
   return (
     <>
     {/* Main Wrapper */}
@@ -42,9 +152,9 @@ function Activities() {
         {/* /Logo */}
         <a id="toggle_btn" href="javascript:void(0);">
           <span className="bar-icon">
-            <span />
-            <span />
-            <span />
+            <span/>
+            <span/>
+            <span/>
           </span>
         </a>
         {/* Header Title */}
@@ -77,17 +187,18 @@ function Activities() {
           </li>
           {/* /Search */}
           {/* Flag */}
-          <li className="nav-item dropdown has-arrow flag-nav">
+          <li className={isCollap ? "collapsed" : ""} >
             <a
               className="nav-link dropdown-toggle"
               data-toggle="dropdown"
               href="#"
               role="button"
+              onClick={handleToggl}
             >
               <img src="assets/img/flags/us.png" alt="" height={20} />{" "}
               <span>English</span>
             </a>
-            <div className="dropdown-menu dropdown-menu-right">
+            <div className={`sub-menu ${isCollap ? "collapse" : "show"}`}>
               <a href="javascript:void(0);" className="dropdown-item">
                 <img src="assets/img/flags/us.png" alt="" height={16} /> English
               </a>
@@ -104,16 +215,17 @@ function Activities() {
           </li>
           {/* /Flag */}
           {/* Notifications */}
-          <li className="nav-item dropdown">
+          <li className={isCollapsed ? "collapsed" : ""}>
             <a
               href="#"
               className="dropdown-toggle nav-link"
               data-toggle="dropdown"
+              onClick={handleToggle}
             >
               <i className="fa fa-bell-o" />{" "}
               <span className="badge badge-pill">3</span>
             </a>
-            <div className="dropdown-menu notifications">
+            <div className={`sub-menu ${isCollapsed ? "collapse" : "show"}`}>
               <div className="topnav-dropdown-header">
                 <span className="notification-title">Notifications</span>
                 <a href="javascript:void(0)" className="clear-noti">
@@ -239,16 +351,19 @@ function Activities() {
           </li>
           {/* /Notifications */}
           {/* Message Notifications */}
-          <li className="nav-item dropdown">
+          {/* <li className="nav-item dropdown"> */}
+          <li cclassName={isColla ? "collapsed" : ""}>
             <a
               href="#"
               className="dropdown-toggle nav-link"
               data-toggle="dropdown"
+              onClick={handleTogg}
             >
               <i className="fa fa-comment-o" />{" "}
               <span className="badge badge-pill">8</span>
             </a>
-            <div className="dropdown-menu notifications">
+            {/* <div className="dropdown-menu notifications"> */}
+            <div className={`sub-menu ${isColla ? "collapse" : "show"}`}>
               <div className="topnav-dropdown-header">
                 <span className="notification-title">Messages</span>
                 <a href="javascript:void(0)" className="clear-noti">
@@ -367,11 +482,12 @@ function Activities() {
             </div>
           </li>
           {/* /Message Notifications */}
-          <li className="nav-item dropdown has-arrow main-drop">
+          <li className={isColl ? "collapsed" : ""}>
             <a
               href="#"
               className="dropdown-toggle nav-link"
               data-toggle="dropdown"
+              onClick={handleTo}
             >
               <span className="user-img">
                 <img src="assets/img/profiles/avatar-21.jpg" alt="" />
@@ -379,7 +495,7 @@ function Activities() {
               </span>
               <span>Admin</span>
             </a>
-            <div className="dropdown-menu">
+            <div className={`sub-menu ${isColl ? "collapse" : "show"}`} >
               <Link className="dropdown-item" to="/Profilee">
                 My Profile
               </Link>
@@ -558,11 +674,12 @@ function Activities() {
                 </Link>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuProject}>
                   <i className="la la-rocket" /> <span> Projects</span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
                     <Link to="/Projectsz">Projects</Link>
                   </li>
@@ -573,6 +690,7 @@ function Activities() {
                   <Link to="/TaskBoard">Task Board</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
                 <Link to="/Leads">
@@ -588,11 +706,12 @@ function Activities() {
                 <span>HR</span>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuAccounts}>
                   <i className="la la-files-o" /> <span> Accounts </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuAccounts && (
+                <ul>
                   <li>
                     <Link to="/Estimates">Estimates</Link>
                   </li>
@@ -612,13 +731,15 @@ function Activities() {
                     <Link to="/Taxes">Taxes</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuPayroll} >
                   <i className="la la-money" /> <span> Payroll </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
                     <Link to="/Salary"> Employee Salary </Link>
                   </li>
@@ -629,6 +750,7 @@ function Activities() {
                     <Link to="/PayrollItems"> Payroll Items </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
                 <Link to="/Policies">
@@ -636,11 +758,12 @@ function Activities() {
                 </Link>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuReports}>
                   <i className="la la-pie-chart" /> <span> Reports </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
                     <Link to="/ExpenseReports"> Expense Report </Link>
                   </li>
@@ -648,16 +771,18 @@ function Activities() {
                   <Link to="/InvoiceReports"> Invoice Report </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="menu-title">
                 <span>Performance</span>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuPerformance}>
                   <i className="la la-graduation-cap" />{" "}
                   <span> Performance </span> <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProject && (
+                <ul>
                   <li>
                   <Link to="/PerformanceIndicator">
                       {" "}
@@ -674,13 +799,15 @@ function Activities() {
                     </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuGoals}>
                   <i className="la la-crosshairs" /> <span> Goals </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuGoals && (
+                <ul>
                   <li>
                     <Link to="/GoalTracking"> Goal List </Link>
                   </li>
@@ -688,13 +815,15 @@ function Activities() {
                     <Link to="/GoalType"> Goal Type </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuTraining}>
                   <i className="la la-edit" /> <span> Training </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuTraining && (
+                <ul>
                   <li>
                   <Link to="/Training"> Training List </Link>
                   </li>
@@ -705,6 +834,7 @@ function Activities() {
                     <Link to="/TrainingType"> Training Type </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
                 <Link to="/Promotion">
@@ -731,11 +861,12 @@ function Activities() {
                 </Link>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuJobs}>
                   <i className="la la-briefcase" /> <span> Jobs </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuJobs && (
+                <ul>
                   <li>
                     <Link to="/Jobsz"> Manage Jobs </Link>
                   </li>
@@ -743,6 +874,7 @@ function Activities() {
                     <Link to="/JobApplicants"> Applied Candidates </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li>
                 <Link to="/knowledgeBase">
@@ -768,11 +900,12 @@ function Activities() {
                 <span>Pages</span>
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuProfile}>
                   <i className="la la-user" /> <span> Profile </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuProfile && (
+                <ul>
                   <li>
                     <Link to="/Profilee"> Employee Profile </Link>
                   </li>
@@ -780,13 +913,15 @@ function Activities() {
                     <Link to="/ClientProfile"> Client Profile </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuAuthentication}>
                   <i className="la la-key" /> <span> Authentication </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuAuthentication && (
+                <ul>
                   <li>
                     <Link to="/LogIn"> Login </Link>
                   </li>
@@ -803,13 +938,15 @@ function Activities() {
                     <Link to="/LockScreen"> Lock Screen </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuErrorPages}>
                   <i className="la la-exclamation-triangle" />{" "}
                   <span> Error Pages </span> <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuErrorPages && (
+                <ul>
                   <li>
                     <Link to="/Errorz404">404 Error </Link>
                   </li>
@@ -817,13 +954,15 @@ function Activities() {
                     <Link to="/Errorz500">500 Error </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuSubscriptions}>
                   <i className="la la-hand-o-up" /> <span> Subscriptions </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuSubscriptions && (
+                <ul>
                   <li>
                     <Link to="/Subscriptions"> Subscriptions (Admin) </Link>
                   </li>
@@ -837,13 +976,15 @@ function Activities() {
                     <Link to="/SubscribedCompanies"> Subscribed Companies</Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuPages} >
                   <i className="la la-columns" /> <span> Pages </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+            {isSubmenuPages && (
+                <ul>
                   <li>
                     <Link to="/Search"> Search </Link>
                   </li>
@@ -860,6 +1001,7 @@ function Activities() {
                   <Link to="/BlankPage"> Blank Page </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="menu-title">
                 <span>UI Interface</span>
@@ -869,12 +1011,13 @@ function Activities() {
                   <i className="la la-puzzle-piece" /> <span>Components</span>
                 </Link>
               </li>
-              <li className="submenu">
-                <a href="#">
+              <li className="submenu" onClick={toggleSubmenuForms}>
+                <a href="#" >
                   <i className="la la-object-group" /> <span> Forms </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuForms && (
+                <ul>
                   <li>
                     <Link to="/FormBasicInputs">Basic Inputs </Link>
                   </li>
@@ -894,13 +1037,15 @@ function Activities() {
                     <Link to="/FormValidation"> Form Validation </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="submenu">
-                <a href="#">
+                <a href="#" onClick={toggleSubmenuTables}>
                   <i className="la la-table" /> <span> Tables </span>{" "}
                   <span className="menu-arrow" />
                 </a>
-                <ul style={{ display: "none" }}>
+                {isSubmenuTables && (
+                <ul>
                   <li>
                     <Link to="TablesBasic">Basic Tables </Link>
                   </li>
@@ -908,6 +1053,7 @@ function Activities() {
                     <Link to="/DataTables">Data Table </Link>
                   </li>
                 </ul>
+                )}
               </li>
               <li className="menu-title">
                 <span>Extras</span>
@@ -986,7 +1132,7 @@ function Activities() {
                 <h3 className="page-title">Activities</h3>
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <a href="index.html">Dashboard</a>
+                    <Link to="/Indexx">Dashboard</Link>
                   </li>
                   <li className="breadcrumb-item active">Activities</li>
                 </ul>
@@ -1001,20 +1147,19 @@ function Activities() {
                   <ul className="activity-list">
                     <li>
                       <div className="activity-user">
-                        <a
-                          href="profile.html"
+                        <Link to="/Profilee"
                           title="Lesley Grauer"
                           data-toggle="tooltip"
                           className="avatar"
                         >
                           <img src="assets/img/profiles/avatar-01.jpg" alt="" />
-                        </a>
+                        </Link>
                       </div>
                       <div className="activity-content">
                         <div className="timeline-content">
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Lesley Grauer
-                          </a>{" "}
+                          </Link>{" "}
                           added new task <a href="#">Hospital Administration</a>
                           <span className="time">4 mins ago</span>
                         </div>
@@ -1022,28 +1167,27 @@ function Activities() {
                     </li>
                     <li>
                       <div className="activity-user">
-                        <a
-                          href="profile.html"
+                        <Link to="/Profilee"
                           className="avatar"
                           title="Jeffery Lalor"
                           data-toggle="tooltip"
                         >
                           <img src="assets/img/profiles/avatar-16.jpg" alt="" />
-                        </a>
+                        </Link>
                       </div>
                       <div className="activity-content">
                         <div className="timeline-content">
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Jeffery Lalor
-                          </a>{" "}
+                          </Link>{" "}
                           added{" "}
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Loren Gatlin
-                          </a>{" "}
+                          </Link>{" "}
                           and{" "}
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Tarah Shropshire
-                          </a>{" "}
+                          </Link>{" "}
                           to project <a href="#">Patient appointment booking</a>
                           <span className="time">6 mins ago</span>
                         </div>
@@ -1051,20 +1195,19 @@ function Activities() {
                     </li>
                     <li>
                       <div className="activity-user">
-                        <a
-                          href="profile.html"
+                        <Link to="/Profilee"
                           title="Catherine Manseau"
                           data-toggle="tooltip"
                           className="avatar"
                         >
                           <img src="assets/img/profiles/avatar-08.jpg" alt="" />
-                        </a>
+                        </Link>
                       </div>
                       <div className="activity-content">
                         <div className="timeline-content">
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Catherine Manseau
-                          </a>{" "}
+                          </Link>{" "}
                           completed task{" "}
                           <a href="#">Appointment booking with payment gateway</a>
                           <span className="time">12 mins ago</span>
@@ -1084,9 +1227,9 @@ function Activities() {
                       </div>
                       <div className="activity-content">
                         <div className="timeline-content">
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Bernardo Galaviz
-                          </a>{" "}
+                          </Link>{" "}
                           changed the task name{" "}
                           <a href="#">Doctor available module</a>
                           <span className="time">1 day ago</span>
@@ -1095,20 +1238,19 @@ function Activities() {
                     </li>
                     <li>
                       <div className="activity-user">
-                        <a
-                          href="profile.html"
+                        <Link to="/Profilee"
                           title="Mike Litorus"
                           data-toggle="tooltip"
                           className="avatar"
                         >
                           <img src="assets/img/profiles/avatar-05.jpg" alt="" />
-                        </a>
+                        </Link>
                       </div>
                       <div className="activity-content">
                         <div className="timeline-content">
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Mike Litorus
-                          </a>{" "}
+                          </Link>{" "}
                           added new task{" "}
                           <a href="#">Patient and Doctor video conferencing</a>
                           <span className="time">2 days ago</span>
@@ -1117,28 +1259,27 @@ function Activities() {
                     </li>
                     <li>
                       <div className="activity-user">
-                        <a
-                          href="profile.html"
+                        <Link to="/Profilee"
                           title="Jeffery Lalor"
                           data-toggle="tooltip"
                           className="avatar"
                         >
                           <img src="assets/img/profiles/avatar-16.jpg" alt="" />
-                        </a>
+                        </Link>
                       </div>
                       <div className="activity-content">
                         <div className="timeline-content">
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Jeffery Lalor
-                          </a>{" "}
+                          </Link>{" "}
                           added{" "}
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Jeffrey Warden
-                          </a>{" "}
+                          </Link>{" "}
                           and{" "}
-                          <a href="profile.html" className="name">
+                          <Link to="/Profilee" className="name">
                             Bernardo Galaviz
-                          </a>{" "}
+                          </Link>{" "}
                           to the task of <a href="#">Private chat module</a>
                           <span className="time">7 days ago</span>
                         </div>
